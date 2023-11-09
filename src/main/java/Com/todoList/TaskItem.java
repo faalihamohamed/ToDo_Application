@@ -5,6 +5,9 @@ public class TaskItem {
     private boolean completed;
 
     public TaskItem(String description) {
+         if (!description.matches("[a-zA-Z]+")) {
+            throw new IllegalArgumentException("Task description should only contain alphabets.");
+        }
         this.description = description;
         this.completed = false;
     }
